@@ -10,9 +10,9 @@ import 'package:newproj/ui/Chooseimage.dart';
 import 'package:newproj/ui/preview_page.dart';
 import 'package:newproj/ui/scan_page.dart';
 import 'package:newproj/ui/screens/chat_body.dart';
-import 'package:newproj/ui/screens/chatbot.dart';
+
 import 'package:newproj/ui/screens/map.dart';
-import 'package:newproj/ui/screens/tools.dart';
+
 import 'package:newproj/ui/screens/home_page.dart';
 import 'package:newproj/ui/screens/profile_page.dart';
 import 'package:page_transition/page_transition.dart';
@@ -36,29 +36,22 @@ class _RootPageState extends State<RootPage> {
   List<Widget> _widgetOptions() {
     return [
       const HomePage(),
-      FavoritePage(
-        favoritedPlants: favorites,
-      ),
       const ChatPage(),
       const Map(),
+      const ProfilePage()
     ];
   }
 
   //List of the pages icons
   List<IconData> iconList = [
     Icons.home,
-    Icons.favorite,
     Icons.chat_bubble,
     Icons.map,
+    Icons.settings,
   ];
 
   //List of the pages titles
-  List<String> titleList = [
-    'Home',
-    'Favorite',
-    'chatbot',
-    'Map',
-  ];
+  List<String> titleList = ['Home', 'chatbot', 'Map', 'Settings'];
 
   @override
   Widget build(BuildContext context) {
@@ -74,17 +67,6 @@ class _RootPageState extends State<RootPage> {
                 fontWeight: FontWeight.w500,
                 fontSize: 24,
               ),
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.settings,
-                size: 28.0,
-                color: Constants.blackColor,
-              ),
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const ProfilePage()));
-              },
             ),
           ],
         ),
