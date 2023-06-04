@@ -10,11 +10,6 @@ class Map extends StatefulWidget {
 class _MapState extends State<Map> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
-        title: const Text('New Post'),
-      ),
-    );
+    return Scaffold();
   }
 }
