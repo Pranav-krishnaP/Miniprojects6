@@ -29,7 +29,7 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorSets.backgroundColor,
+      backgroundColor: Color.fromARGB(255, 163, 163, 171),
       body: SafeArea(
         child: Column(
           children: [
