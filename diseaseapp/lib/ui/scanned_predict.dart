@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:camera/camera.dart';
 import 'package:dio/dio.dart';
@@ -112,9 +113,10 @@ Future<File> resizeImageToAspectRatio(
     File imageFile, double aspectRatio) async {
   // Read the image file
   final List<int> imageBytes = await imageFile.readAsBytes();
+  Uint8List myUint8List = Uint8List.fromList(imageBytes);
 
   // Decode the image
-  final img.Image? originalImage = img.decodeImage(imageBytes);
+  final img.Image? originalImage = img.decodeImage(myUint8List);
   if (originalImage == null) {
     throw Exception('Failed to decode image');
   }

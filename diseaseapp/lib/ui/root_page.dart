@@ -34,7 +34,12 @@ class _RootPageState extends State<RootPage> {
 
   //List of the pages
   List<Widget> _widgetOptions() {
-    return [const HomePage(), const ChatPage(), const Map(), ProfilePage()];
+    return [
+      const HomePage(),
+      const ChatPage(),
+      const Map(),
+      const ProfilePage()
+    ];
   }
 
   //List of the pages icons
