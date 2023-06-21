@@ -30,8 +30,12 @@ class ProfilePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ProfileWidget(
-                    icon: Icons.chat,
-                    title: 'FAQs',
+                    icon: Icons.info,
+                    title: 'About',
+                  ),
+                  ProfileWidget(
+                    icon: Icons.support_agent,
+                    title: 'Support',
                   ),
                   ProfileWidget(
                     icon: Icons.share,
