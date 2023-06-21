@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Agriculture News'),
+        title: Text('Latest Agriculture News'),
       ),
       body: FutureBuilder<List<News>>(
         future: _newsFuture,

@@ -39,7 +39,7 @@ class ProfilePage extends StatelessWidget {
                 },
               ),
               SettingsTile(
-                title: Text('share'),
+                title: Text('Share'),
                 leading: Icon(Icons.share),
                 onPressed: (BuildContext context) {
                   Share.share("com.example.AgroVision");
@@ -69,9 +69,11 @@ class about extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('About')),
       body: const Center(
-        child: Text(
-          'This is a new screen',
-          style: TextStyle(fontSize: 24.0),
+        child: Center(
+          child: Text(
+            'This application has been built with the vision of supporting farmers all over the region, along with other enthusiasts.\n\n It caters to several different purposes, some of which include Leaf Disease Detection, Chatbot to clear all your queries regarding plants and crops, Navigating Users to nearby farming supply stores, and many more.\n\n Hope you\'ve had a great experience using this platform.\n\n\n\t\t\t\t\t\t\t\t\t Thanks for using this application.\n\n\t\t\t\t\t\t Developed by Pranav, Philip, Kevin and\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tBalendhu.',
+            style: TextStyle(fontSize: 20.0),
+          ),
         ),
       ),
     );
