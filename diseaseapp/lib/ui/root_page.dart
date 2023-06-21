@@ -35,7 +35,7 @@ class _RootPageState extends State<RootPage> {
   //List of the pages
   List<Widget> _widgetOptions() {
     return [
-      const HomePage(),
+      WeatherbitWidget(),
       const ChatPage(),
       const Map(),
       const ProfilePage()
