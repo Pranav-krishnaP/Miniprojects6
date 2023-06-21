@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:share_plus/share_plus.dart';
 import 'package:settings_ui/settings_ui.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({Key? key}) : super(key: key);
@@ -23,15 +24,25 @@ class ProfilePage extends StatelessWidget {
               SettingsTile(
                 title: Text('Support'),
                 leading: Icon(Icons.support_agent),
-                onPressed: (BuildContext context) {
-                  _navigateToNextScreen2(context);
+                onPressed: (BuildContext) async {
+                  String email = Uri.encodeComponent("agrovzn@gmail.com");
+                  String subject = Uri.encodeComponent("");
+                  String body = Uri.encodeComponent("");
+                  print(subject); //output: Hello%20Flutter
+                  Uri mail =
+                      Uri.parse("mailto:$email?subject=$subject&body=$body");
+                  if (await launchUrl(mail)) {
+                    //email app opened
+                  } else {
+                    //email app is not opened
+                  }
                 },
               ),
               SettingsTile(
                 title: Text('share'),
                 leading: Icon(Icons.share),
                 onPressed: (BuildContext context) {
-                  _navigateToNextScreen3(context);
+                  Share.share("com.example.AgroVision");
                 },
               ),
             ],
@@ -49,11 +60,6 @@ class ProfilePage extends StatelessWidget {
   void _navigateToNextScreen2(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => suppotrt()));
-  }
-
-  void _navigateToNextScreen3(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => share()));
   }
 }
 
@@ -77,21 +83,6 @@ class suppotrt extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Support')),
-      body: const Center(
-        child: Text(
-          'This is a new screen',
-          style: TextStyle(fontSize: 24.0),
-        ),
-      ),
-    );
-  }
-}
-
-class share extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Share')),
       body: const Center(
         child: Text(
           'This is a new screen',
