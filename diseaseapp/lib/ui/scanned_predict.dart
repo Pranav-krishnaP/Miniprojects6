@@ -75,24 +75,26 @@ class _PredictState extends State<Predict> {
               ? const Center(
                   child: CircularProgressIndicator(),
                 )
-              : Center(
-                  child: Column(
-                    children: [
-                      const Text(
-                        "Predicted",
-                        style: TextStyle(fontSize: 20),
+              : (predict.confidence! < 80)
+                  ? Text("Cannot determine the disease")
+                  : Center(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "Predicted",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          const SizedBox(
+                            height: 50,
+                          ),
+                          Text("${predict.disclass}"),
+                          const SizedBox(
+                            height: 50,
+                          ),
+                          Text("${predict.confidence}")
+                        ],
                       ),
-                      const SizedBox(
-                        height: 50,
-                      ),
-                      Text("${predict.disclass}"),
-                      const SizedBox(
-                        height: 50,
-                      ),
-                      Text("${predict.confidence}")
-                    ],
-                  ),
-                )
+                    )
         ],
       )),
     );
