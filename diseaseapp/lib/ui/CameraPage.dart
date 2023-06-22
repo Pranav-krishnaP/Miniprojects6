@@ -71,8 +71,7 @@ class _CameraPageState extends State<CameraPage> {
         body: SafeArea(
       child: Stack(children: [
         (_cameraController.value.isInitialized)
-            ? AspectRatio(
-                aspectRatio: 1, child: CameraPreview(_cameraController))
+            ? CameraPreview(_cameraController)
             : Container(
                 color: Colors.black,
                 child: const Center(child: CircularProgressIndicator())),

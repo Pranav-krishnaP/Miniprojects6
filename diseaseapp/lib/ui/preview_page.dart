@@ -24,6 +24,8 @@ class PreviewPage extends StatelessWidget {
           Image.file(
             File(picture.path),
             fit: BoxFit.cover,
+            width: 256,
+            height: 256,
           ),
           const SizedBox(height: 24),
           Text(picture.name),
