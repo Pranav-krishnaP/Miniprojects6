@@ -34,12 +34,7 @@ class _RootPageState extends State<RootPage> {
 
   //List of the pages
   List<Widget> _widgetOptions() {
-    return [
-      WeatherbitWidget(),
-      const ChatPage(),
-      const Map(),
-      const ProfilePage()
-    ];
+    return [HomePage(), const ChatPage(), const Map(), ProfilePage()];
   }
 
   //List of the pages icons
@@ -51,7 +46,7 @@ class _RootPageState extends State<RootPage> {
   ];
 
   //List of the pages titles
-  List<String> titleList = ['Home', 'chatbot', 'Map', 'Settings'];
+  List<String> titleList = ['Home', 'Chatbot', 'Map', 'Settings'];
 
   @override
   Widget build(BuildContext context) {
